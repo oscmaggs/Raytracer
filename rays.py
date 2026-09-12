@@ -1,3 +1,7 @@
+import math
+
+from intersection import Intersection
+
 class Ray:
     def __init__(self, origin, D):
         self.origin = origin
@@ -38,8 +42,7 @@ class Ray:
             normal = nhit,
             object = sphere
         )
-
-  def nearestSphereIntersect(self, spheres, suppress_ids=[], bounces=0, max_bounces=1, through_count=0):
+    def nearestSphereIntersect(self, spheres, suppress_ids=[], bounces=0, max_bounces=1, through_count=0):
 
         intersections = []
 
