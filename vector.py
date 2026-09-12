@@ -1,3 +1,7 @@
+import math
+import numpy as np
+from numpy import sin, cos, tan, arccos
+
 class Vector:
     @staticmethod
     def fromNpArray(array):
@@ -54,6 +58,9 @@ class Vector:
         return v.subtractVector(normal.scaleBylength(2 * v.dotProduct(normal))).normalise()
 
     def dotProduct(self, B):
+        return self.x * B.x + self.y * B.y + self.z * B.z
+
+    def crossProduct(self, B):
         return Vector(
             x=self.y*B.z - self.z*B.y,
             y=self.z*B.x - self.x*B.z,
@@ -84,5 +91,3 @@ class Vector:
             self = Vector(x=V[0], y=V[1], z=V[2])
         return Vector(x=V[0], y=V[1], z=V[2])
                         
-    
-        
